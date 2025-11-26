@@ -1,11 +1,9 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # The path between localhost/ and index.html
   RewriteBase /ebara-pwa/web/
 
-  # If the request is NOT a file (-f) and NOT a directory (-d)
+  # Redirect everything that isn't a file or directory to index.html
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  # ...then internally route it to index.html
   RewriteRule ^ index.html [L]
 </IfModule>
